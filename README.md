@@ -92,12 +92,12 @@ Add similar lines of code to update `monkey.pos` and `monkey.velocity` in your c
 
 Congratulations! You saved the monkey!
 
-## Extension: what about air resistance?
+## Optional extension: what about air resistance?
 
-The force of air resistance can be written as F=1/2*CdA*v^2 and it's always in the opposite direction of `vhat`. So to take air resistance into account, you could simply update `vhat` and update acceleration as `F_air/m+vec(0,-9.8,0)`. Computational skills make such "impossible" tasks quite simple!
+Physics is definitely not about ideal frictionless planes and unrealistic scenarios. Learning a little computation lets us make this as realistic as we want. The force of air resistance can be written as F=1/2*CdA*v^2 and it's always in the opposite direction of `vhat`. So to take air resistance into account, you could simply update `vhat` and update acceleration as `F_air/m+vec(0,-9.8,0)`. Computational skills make such "impossible" tasks quite simple!
 
-## Extension: what about relativistic speeds?
+## Optional extension: what about relativistic speeds?
 
-Simple. Just read to the end of Chapter 1 and update gamma.
+Simple. Just read to the end of Chapter 1 and update $$\gamma=\frac{1}{\sqrt{1-v^2/c^2}$$. 
 
 
