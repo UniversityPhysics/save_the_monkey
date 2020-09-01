@@ -37,7 +37,7 @@ See if this code will run without errors.
 Draw a cylinder representing a person, a sphere representing a monkey, and a flattened cylinder representing the ground (for reference). The top part of your code should now look something like this. 
 
 ```
-#All inputs to this code go up here, not buried deep inside the code
+#All inputs to this code go up at the top, not buried deep inside the code
 v0=30.0
 tree_distance=40.0
 
@@ -55,15 +55,17 @@ Run the code to see your scene and verify that the dart position is at the top o
 ## Next, learn to draw a vector (use object properties)
 Draw a vector arrow from the dart position to the monkey. The "tail" of the arrow should be at position `dart.pos`. The axis property is the actual vector, which should point from the dart position to the monkey position. Add this arrow object below to your code, and correct the axis property using vector math.
 ```
-aim=arrow(pos=dart.pos, axis=monkey.pos, shaftwidth=0.5)
+aim=arrow(pos=dart.pos, axis=monkey.pos-dart.pos, shaftwidth=0.5)
 ```
-Run the code to see if the `aim` arrow points from the dart toward the monkey.
+Run the code to see if the `aim` arrow points from the dart toward the monkey. Can you see why the vector needs to point in the direction `monkey.pos-dart.pos`, rather than just `monkey.pos`?
 
-This arrow is useful because it tells us which direction the initial velocity of the dart should be aimed. Lets calculate a unit vector `vhat` from the vector `aim.axis` and correct the velocity before the loop:
+This arrow is useful because it tells us which direction the initial velocity of the dart should be aimed. Lets calculate a unit vector `vhat` from the vector `aim.axis`. It's common to denote unit vectors with a "hat", such as $$\hat{v}$$, which people pronounce "v-hat". Using the unit vector `vhat`, correct the velocity before the loop:
 ```
 vhat=aim.axis/mag(aim.axis)
 velocity=v0 * vhat
 ```
+
+An equivalent way to calculate a unit vector is to use `vhat=norm(aim.axis)`. This way doesn't complain if the vector happens to be zero.
 
 Run your code and verify that the dart velocity is in the correct direction. Modify time t_max so that the loop stops when the dart is approximately at the monkey position. Alternatively, you could do something like `while dart.pos.x < monkey.pos.x :`.
 
