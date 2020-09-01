@@ -94,10 +94,10 @@ Congratulations! You saved the monkey!
 
 ## Optional extension: what about air resistance?
 
-Physics is definitely not about ideal frictionless planes and unrealistic scenarios. Learning a little computation lets us make this as realistic as we want. The force of air resistance can be written as <img src="https://latex.codecogs.com/svg.latex?&space;F_{drag}=\frac{1}{2}C_dA\,v^2" title = "F_{drag}=\frac{1}{2}C_dA\,v^2"\> and it's always in the opposite direction of `vhat`. So to take air resistance into account, you could simply update `vhat` and update acceleration as `F_air/m+vec(0,-9.8,0)`. Computational skills make such "impossible" tasks quite simple!
+Physics is definitely not about ideal frictionless planes and unrealistic scenarios. Learning a little computation lets us make this as realistic as we want. The force of air resistance depends on velocity-squared and a shape-dependent coefficient CdA called the "drag area" (having units of area): `F_air=0.5*CdA*mag(dart.velocity)**2` The drag force is always in the opposite direction of `vhat`. So to take air resistance into account, you could simply update `vhat` and update acceleration as `F_air/m+vec(0,-9.8,0)`. Computational skills can make such seemingly-impossible tasks quite simple!
 
 ## Optional extension: what about relativistic speeds?
 
-Simple. Just read to the end of Chapter 1 and update <img src="https://latex.codecogs.com/svg.latex?\Large&space;\gamma=\frac{1}{\sqrt{1-v^2/c^2}" title = "\gamma=\frac{1}{\sqrt{1-v^2/c^2}"\>. 
+Simple. Just read to the end of Chapter 1 and update gamma. 
 
 
