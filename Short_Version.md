@@ -1,3 +1,38 @@
+# Save the Monkey
+
+
+## Drop the Monkey
+To include acceleration in our physics engine, the best method is to update velocities first, then update positions. Examine the code below and write in what is missing. Then key it in yourself. Checkpoint: you see dots because the monkey is accelerating.
+
+````
+# Create a monkey 
+monkey=sphere(make_trail=True, trail_type="points")
+monkey.velocity = vec(0,0,0)        # Add a velocity property to the object
+monkey.acceleration = vec(0,-9.8,0) # Add an acceleration property to the object
+
+# Calculate the time ”tmax” when the dart reaches the monkey
+tmax = 1.5
+
+# Physics engine
+scene.waitfor('click')           ## wait for a mouse click
+t=0
+while t<tmax:
+    rate(1.0/delta_t) #pause delta_t seconds
+
+    #update all velocities
+    monkey.velocity = monkey.velocity +  
+
+    #update all positions 
+    monkey.pos = 
+
+    t=t+delta_t
+
+````
+
+## Set the scene
+
+
+````
 Web VPython 3.2
 # Inputs
 v0=30.0         # dart velocity
@@ -29,7 +64,7 @@ dart.velocity=v0*norm(aim)
 dart.acceleration=vec(0,-g,0)
 
 # Calculate the time ”tmax” when the dart reaches the monkey
-tmax=(monkey.pos.x-person.pos.x)/dart.velocity.x #this calculated time is a hint, but it is not complete
+tmax=(monkey.pos.x-0)/dart.velocity.x #this calculated time is a hint, but it is not complete
 print(tmax)
 
 # Physics engine
@@ -37,16 +72,16 @@ scene.waitfor('click')           ## wait for a mouse click
 t=0
 while t<tmax:
     rate(1.0/delta_t) #slow the execution of the loop down so it runs every delta_t seconds
-    #update velocities 
-    dart.velocity = dart.velocity + dart.acceleration*delta_t
-    monkey.velocity = monkey.velocity + monkey.acceleration*delta_t
-  
-    #update positions
-    dart.pos=dart.pos + dart.velocity * delta_t
-    monkey.pos=monkey.pos + monkey.velocity * delta_t
-    
+
+    #update all velocities
+    monkey.velocity = monkey.velocity +  
+    dart.velocity = 
+
+    #update all positions
+    monkey.pos=monkey.pos + 
+    dart.pos=
+
     t=t+delta_t
-    
     
 print("distance=",mag(monkey.pos-dart.pos)," m")
 ````
